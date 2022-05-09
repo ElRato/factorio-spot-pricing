@@ -64,7 +64,7 @@ permissions:
 
 jobs:
   deploy:
-    name: Deploy
+    name: Make Factorio ${{ github.event.inputs.serverState }}
     runs-on: ubuntu-latest
     environment: production
 
