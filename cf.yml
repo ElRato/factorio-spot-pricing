@@ -132,7 +132,7 @@ Resources:
     Properties:
       LogGroupName: ${AWS::StackName}-log-group
       RetentionInDays: 2
-  LogsStream:
+  LogStream:
     Type: AWS::Logs::LogStream
     Properties: 
       LogGroupName: !Ref LogGroup
