@@ -138,7 +138,7 @@ Resources:
       - LogGroup
     Properties: 
       LogGroupName: !Ref LogGroup
-      LogStreamName: ${AWS::StackName}-log-stream
+      LogStreamName: !Sub ${AWS::StackName}-log-stream
 
   # ====================================================
   # BASIC VPC
