@@ -76,8 +76,8 @@ jobs:
           parameter-overrides: >-
             FactorioImageTag=stable,
             ServerState=${{ github.event.inputs.serverState }},
-            InstanceType=t3.small,
-            SpotPrice=0.0073,
+            InstanceType=t3.micro,
+            SpotPrice=0.0035,
             KeyPairName=factorio-admin-eu-south-1,
             YourIp=${{ github.event.inputs.ip }},
             UpdateModsOnStart=true,
