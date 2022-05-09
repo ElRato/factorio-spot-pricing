@@ -371,7 +371,7 @@ Resources:
           TransitEncryption: ENABLED
       ContainerDefinitions:
         - Name: factorio
-          MemoryReservation: 1024
+          MemoryReservation: 2048
           Image: !Sub "factoriotools/factorio:${FactorioImageTag}"
           PortMappings:
           - ContainerPort: 34197
