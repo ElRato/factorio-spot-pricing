@@ -65,6 +65,14 @@ Parameters:
     AllowedValues:
     - true
     - false
+  
+  ModPortalLogin:
+    Type: String
+    Default: false
+
+  ModPortalToken:
+    Type: String
+    Default: false
 
 Metadata:
   AWS::CloudFormation::Interface:
@@ -385,6 +393,12 @@ Resources:
           Environment:
           - Name: UPDATE_MODS_ON_START
             Value: !Sub "${UpdateModsOnStart}"
+          - Name: USERNAME
+            Value: !Sub "${ModPortalLogin}"
+          - Name: TOKEN
+            Value: !Sub "${ModPortalToken}"
+
+            ModPortalLogin
 
   # ====================================================
   # SET DNS RECORD

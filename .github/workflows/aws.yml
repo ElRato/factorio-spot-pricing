@@ -80,4 +80,7 @@ jobs:
             SpotPrice=0.0073,
             KeyPairName=factorio-admin-eu-south-1,
             YourIp=${{ github.event.inputs.ip }},
-            UpdateModsOnStart=true
+            UpdateModsOnStart=true,
+            ModPortalLogin=${{ secrets.MOD_PORTAL_LOGIN }},
+            ModPortalToken=${{ secrets.MOD_PORTAL_PWD }}
+
