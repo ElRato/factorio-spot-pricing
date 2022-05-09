@@ -130,7 +130,6 @@ Resources:
   LogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: ${AWS::StackName}-log-group-${Fn::GetAtt "LogGroup"}
       RetentionInDays: 7
 
   LogStream:
