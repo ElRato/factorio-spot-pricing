@@ -365,7 +365,7 @@ Resources:
             Options:
               awslogs-group: !Sub ${AWS::StackName}-service
               awslogs-region: !Ref "AWS::Region"
-              awslogs-stream-prefix: !Ref "server"
+              awslogs-stream-prefix: !Ref ${AWS::StackName}
           Environment:
           - Name: UPDATE_MODS_ON_START
             Value: !Sub "${UpdateModsOnStart}"
