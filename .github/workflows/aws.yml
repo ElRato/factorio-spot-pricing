@@ -32,6 +32,7 @@ on:
       serverState:
         description: "Server State"
         required: true
+        type: choice
         options:
           - Running
           - Stopped
@@ -80,3 +81,5 @@ jobs:
             KeyPairName=factorio-admin-eu-south-1,
             YourIp=${{ github.event.inputs.ip }},
             UpdateModsOnStart=true
+
+            KrastorioMultiplayer.zip

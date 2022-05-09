@@ -363,6 +363,12 @@ Resources:
           Environment:
           - Name: UPDATE_MODS_ON_START
             Value: !Sub "${UpdateModsOnStart}"
+            LogConfiguration:
+              LogDriver: "awslogs"
+              Options:
+                awslogs-group: !Sub ${AWS::StackName}-service
+                awslogs-region: !Ref "AWS::Region"
+                awslogs-stream-prefix: !Ref "server"
 
   # ====================================================
   # SET DNS RECORD
