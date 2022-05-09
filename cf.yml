@@ -124,6 +124,19 @@ Mappings:
       DesiredCapacity: 0
 
 Resources:
+  # ====================================================
+  # LOGS
+  # ====================================================
+  LogGroup
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: ${AWS::StackName}-log-group
+      RetentionInDays: 2
+  LogsStream:
+    Type: AWS::Logs::LogStream
+    Properties: 
+      LogGroupName: !Ref LogGroup
+      LogStreamName: ${AWS::StackName}-log-stream
 
   # ====================================================
   # BASIC VPC
@@ -363,9 +376,9 @@ Resources:
           LogConfiguration:
             LogDriver: "awslogs"
             Options:
-              awslogs-group: !Sub ${AWS::StackName}-service
+              awslogs-group: !Ref LogGroup
               awslogs-region: !Ref "AWS::Region"
-              awslogs-stream-prefix: !Ref ${AWS::StackName}
+              awslogs-stream-prefix: !Ref LogStream
           Environment:
           - Name: UPDATE_MODS_ON_START
             Value: !Sub "${UpdateModsOnStart}"
