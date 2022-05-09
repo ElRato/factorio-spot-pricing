@@ -46,7 +46,6 @@ on:
         type: choise
         options:
           - t3.micro
-          - t3.small
         default: t3.micro
       
       price:
