@@ -390,14 +390,13 @@ Resources:
               awslogs-group: !Ref LogGroup
               awslogs-region: !Ref "AWS::Region"
               awslogs-stream-prefix: !Ref LogStream
-          Secrets:
-          - Name: username
-            Value: !Sub "${ModPortalLogin}"
-          - Name: token
-            Value: !Sub "${ModPortalToken}"
           Environment:
           - Name: UPDATE_MODS_ON_START
             Value: !Sub "${UpdateModsOnStart}"
+          - Name: USERNAME
+            Value: !Sub "${ModPortalLogin}"
+          - Name: TOKEN
+            Value: !Sub "${ModPortalToken}"
 
   # ====================================================
   # SET DNS RECORD
