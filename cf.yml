@@ -398,8 +398,6 @@ Resources:
           - Name: TOKEN
             Value: !Sub "${ModPortalToken}"
 
-            ModPortalLogin
-
   # ====================================================
   # SET DNS RECORD
   # ====================================================
