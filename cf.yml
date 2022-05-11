@@ -289,8 +289,6 @@ Resources:
     - Ec2Sg
     Properties:
       LaunchTemplateData:
-        SecurityGroupIds:
-        - !Ref Ec2Sg
         InstanceInitiatedShutdownBehavior: terminate
         KeyName: !If [ KeyPairNameProvided, !Ref KeyPairName, !Ref 'AWS::NoValue' ]
         ImageId: !Ref ECSAMI
@@ -314,7 +312,7 @@ Resources:
             AssociatePublicIpAddress: true
             DeleteOnTermination: true
             Groups:
-              - !Ref Ec2Sg
+            - !Ref Ec2Sg
 
   AutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
