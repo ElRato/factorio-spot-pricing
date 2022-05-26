@@ -51,6 +51,7 @@ on:
         options:
           - t3.micro
           - t3.small
+        default: t3.small
       
       price:
         description: "Instance price"
