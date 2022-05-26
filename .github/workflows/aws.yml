@@ -47,16 +47,17 @@ on:
       size:
         description: "Instance size"
         required: true
-        type: choise
+        type: choice
         options:
           - t3.micro
-        default: t3.micro
+          - t3.small
+        default: t3.small
       
       price:
         description: "Instance price"
         required: true
         type: number
-        default: 0.0037
+        default: 0.0073
 
 env:
   AWS_REGION: eu-south-1

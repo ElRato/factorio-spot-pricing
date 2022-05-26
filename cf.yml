@@ -130,6 +130,12 @@ Mappings:
       DesiredCapacity: 1
     Stopped:
       DesiredCapacity: 0
+  InstanceMemory:
+    t3.micro:
+      memory: 950
+    t3.small:
+      memory: 1900
+  
 
 Resources:
   # ====================================================
@@ -387,7 +393,7 @@ Resources:
           TransitEncryption: ENABLED
       ContainerDefinitions:
         - Name: factorio
-          MemoryReservation: 950
+          MemoryReservation: !FindInMap [ InstanceMemory, !Ref InstanceType, memory ]
           Image: !Sub "factoriotools/factorio:${FactorioImageTag}"
           PortMappings:
           - ContainerPort: 34197
