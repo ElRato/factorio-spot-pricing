@@ -47,7 +47,7 @@ on:
       size:
         description: "Instance size"
         required: true
-        type: choise
+        type: choice
         options:
           - t3.micro
           - t3.small
